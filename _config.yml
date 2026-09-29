@@ -1,0 +1,4 @@
+# Configuration Jekyll pour GitHub Pages.
+lang: fr
+exclude:
+  - README.md
