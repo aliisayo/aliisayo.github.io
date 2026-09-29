@@ -1,510 +1,433 @@
 ---
 # Page générée par Jekyll (GitHub Pages) à partir de _data/portfolio.yml.
+# Le contenu se modifie dans _data/portfolio.yml ; ce fichier ne contient que le design.
 ---
+{% assign p = site.data.portfolio %}
+{% assign id = p.identite %}
+{% assign linkedin_label = id.linkedin | remove: "https://" | remove: "http://" | remove: "www." %}
+{% assign github_label = id.github | remove: "https://" | remove: "http://" %}
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Ali Sayo Gambo, ingénieur en sécurité des systèmes informatiques et analyste SOC à Niamey (Niger) : compétences, expérience, projets et certifications.">
-<meta property="og:title" content="Ali Sayo Gambo — Analyste SOC">
-<meta property="og:description" content="Ingénieur en sécurité des systèmes informatiques · Analyste SOC · Niamey, Niger">
+<meta name="description" content="{{ id.nom | escape }} — {{ id.titre | escape }}. {{ id.adresse | escape }}.">
+<meta property="og:title" content="{{ id.nom | escape }} — Analyste SOC">
+<meta property="og:description" content="{{ id.titre | escape }} · {{ id.adresse | escape }}">
 <meta property="og:type" content="website">
-<title>Ali Sayo Gambo — Analyste SOC</title>
+<meta name="theme-color" content="#0a1422">
+<title>{{ id.nom | escape }} — Analyste SOC</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-  img{max-width:100%}
   :root{
     color-scheme: dark;
-    --bg: #0B1113;
-    --surface: #121A1D;
-    --surface-2: #182124;
-    --ink: #E9EEED;
-    --ink-soft: #9AABAF;
-    --ink-faint: #647074;
-    --line: #223033;
-    --accent: #45C9D2;
-    --accent-soft: #16292B;
-    --pending: #E3AE5E;
-    --pending-soft: #241D12;
-    --pending-line: #4A3A1F;
-    --focus: #45C9D2;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 26px -14px rgba(0,0,0,0.55);
+    --bg: #0a1422;
+    --bg-2: #0d1a2c;
+    --panel: #10213a;
+    --panel-2: #132842;
+    --line: #1f3b5c;
+    --line-soft: #183049;
+    --ink: #eaf2fb;
+    --ink-soft: #a9bdd3;
+    --ink-faint: #6c85a1;
+    --cyan: #00c4cc;
+    --cyan-soft: rgba(0,196,204,.12);
+    --green: #3ddc84;
+    --amber: #f2b24b;
+    --radius: 14px;
+    --display: "Sora", "IBM Plex Sans", system-ui, sans-serif;
+    --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   }
-
-  /* Page volontairement sombre uniquement — pas d'adaptation au thème du système. */
-
   *{ box-sizing: border-box; }
   html{ text-size-adjust: 100%; }
   body{
     margin: 0;
-    background: var(--bg);
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(0,196,204,.10), transparent 60%),
+      radial-gradient(700px 500px at -10% 30%, rgba(40,90,160,.18), transparent 60%),
+      var(--bg);
     color: var(--ink);
-    font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--body);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  a{ color: var(--accent); text-decoration: none; }
+  a{ color: var(--cyan); text-decoration: none; }
   a:hover{ text-decoration: underline; }
-  a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--focus);
-    outline-offset: 3px;
-    border-radius: 3px;
-  }
+  a:focus-visible, button:focus-visible, summary:focus-visible{ outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
   .sr-only{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-  .wrap{
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 64px 24px 96px;
-  }
+  .wrap{ max-width: 920px; margin: 0 auto; padding: 40px 20px 72px; }
 
   /* ---------- En-tête ---------- */
-  .head{
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 48px;
-  }
-  .head h1{
-    font-family: "Newsreader", Georgia, serif;
-    font-weight: 500;
-    font-size: clamp(36px, 6vw, 54px);
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    margin: 0 0 8px;
-    text-wrap: balance;
-  }
-  .head .role{
-    font-family: "Newsreader", Georgia, serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(19px, 3vw, 23px);
-    line-height: 1.35;
-    color: var(--ink-soft);
-    margin: 0 0 26px;
-    text-wrap: balance;
-  }
-  .meta-strip{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 13px;
-    color: var(--ink-soft);
-    overflow-wrap: anywhere;
-  }
-  .meta-strip .k{ color: var(--ink-faint); margin-right: 6px; }
-  .meta-strip a{ color: var(--ink); }
-  .meta-strip a:hover{ color: var(--accent); }
-
-  /* ---------- Sections ---------- */
-  section{ margin-bottom: 56px; }
-  section:last-of-type{ margin-bottom: 0; }
-  .eyebrow{
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 22px;
-  }
-  .eyebrow h2{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin: 0;
-    white-space: nowrap;
-  }
-  .eyebrow .rule{ flex: 1; height: 1px; background: var(--line); }
-  .sub-eyebrow{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    margin: 28px 0 14px;
-  }
-  .sub-eyebrow:first-child{ margin-top: 0; }
-
-  /* ---------- Profil ---------- */
-  .profile p{
-    margin: 0;
-    font-size: 16.5px;
-    color: var(--ink-soft);
-    max-width: 65ch;
-  }
-  .profile p + p{ margin-top: 12px; }
-  .profile strong{ color: var(--ink); font-weight: 500; }
-
-  /* ---------- Compétences ---------- */
-  .skills{
-    display: grid;
-    grid-template-columns: 190px 1fr;
-    border-top: 1px solid var(--line);
-    margin: 0;
-  }
-  .skills dt, .skills dd{
-    margin: 0;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .skills dt{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    padding-right: 16px;
-    padding-top: 17px;
-  }
-  .chips{ display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip{
-    display: inline-flex;
-    align-items: center;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    padding: 3px 9px;
-    border-radius: 5px;
-    line-height: 1.5;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid var(--line);
-  }
-  .chip.muted{ color: var(--ink-soft); }
-  .chip.status-pending{
-    color: var(--pending);
-    background: var(--pending-soft);
-    border-color: var(--pending-line);
-    font-size: 11px;
-  }
-  .chip.status-new{
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    font-size: 11px;
-  }
-
-  /* ---------- Entrées ---------- */
-  .entry{
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 20px 22px;
-    box-shadow: var(--shadow);
-    margin-bottom: 14px;
-  }
-  .entry:last-child{ margin-bottom: 0; }
-  .entry-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 4px 12px;
-    flex-wrap: wrap;
-  }
-  .entry-title{
-    font-weight: 600;
-    font-size: 16.5px;
-    line-height: 1.4;
-    margin: 0;
-  }
-  .entry-meta{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    color: var(--ink-faint);
-    white-space: nowrap;
-  }
-  .entry-org{
-    font-size: 14px;
-    color: var(--ink-soft);
-    margin: 3px 0 0;
-  }
-  .entry ul{
-    margin: 12px 0 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-  .entry li{
-    font-size: 14.5px;
-    color: var(--ink-soft);
-    padding-left: 17px;
+  .hero{
     position: relative;
-  }
-  .entry li::before{
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-  }
-  .entry .chips{ margin-top: 14px; }
-  .entry .chips .chip{ font-size: 11px; color: var(--ink-soft); background: var(--surface-2); }
-
-  /* ---------- Listes compactes (certifications, langues) ---------- */
-  .rows{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-  }
-  .rows li{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 4px 16px;
-    flex-wrap: wrap;
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--line);
-  }
-  .rows li:last-child{ border-bottom: 0; }
-  .rows .name{ font-size: 15px; font-weight: 500; }
-  .rows .by{ display: block; font-size: 13.5px; color: var(--ink-soft); font-weight: 400; }
-  .rows .when{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    color: var(--ink-faint);
-    white-space: nowrap;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
     align-items: center;
-    gap: 8px;
-  }
-
-  /* ---------- CV ---------- */
-  .cv-block{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px 20px;
-    background: var(--surface);
+    padding: 36px 36px 32px;
     border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 22px 24px;
-    box-shadow: var(--shadow);
-    flex-wrap: wrap;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--panel-2), var(--bg-2));
+    box-shadow: 0 0 0 1px rgba(0,196,204,.06) inset, 0 30px 60px -30px rgba(0,0,0,.6);
+    overflow: hidden;
   }
-  .cv-title{
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0 0 4px;
+  .hero::before{
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(90deg, transparent 40%, #000 100%);
+    opacity: .45; pointer-events: none;
   }
-  .cv-meta{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    color: var(--ink-faint);
-    margin: 0;
+  .hero > *{ position: relative; }
+  .hero h1{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
   }
-  .cv-action{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 13px;
-    color: var(--ink);
-    background: var(--surface-2);
-    border: 1px solid var(--line);
-    padding: 9px 14px;
-    border-radius: 7px;
-    white-space: nowrap;
+  .hero .role{ margin: 0 0 12px; color: var(--ink-soft); font-size: 17px; max-width: 60ch; text-wrap: balance; }
+  .hero .links{ display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--mono); font-size: 13px; margin: 0 0 18px; }
+  .hero .links a{ color: var(--cyan); }
+  .pills{ display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill{
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: rgba(10,20,34,.6);
   }
-  .cv-action:hover{ border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .pill .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+  .shield{ width: 132px; height: 132px; }
 
-  /* ---------- Contact ---------- */
-  .contact{
-    margin-top: 64px;
-    padding: 32px 28px;
-    background: var(--surface-2);
-    border-radius: 12px;
-    text-align: center;
+  /* ---------- Rail vertical + sections ---------- */
+  main{ position: relative; margin-top: 28px; padding-left: 38px; }
+  main::before{
+    content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(var(--cyan), rgba(0,196,204,.15));
+    border-radius: 2px;
   }
-  .contact p.lede{
-    font-family: "Newsreader", Georgia, serif;
-    font-style: italic;
-    font-size: 19px;
-    color: var(--ink-soft);
-    margin: 0 0 20px;
-  }
-  .contact-links{
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .contact-links a{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 13.5px;
-    color: var(--ink);
-    background: var(--surface);
+  section{
+    position: relative;
+    margin-bottom: 18px;
+    padding: 22px 26px 24px;
     border: 1px solid var(--line);
-    padding: 10px 16px;
-    border-radius: 7px;
-    text-decoration: none;
-    overflow-wrap: anywhere;
+    border-radius: var(--radius);
+    background: rgba(16,33,58,.72);
+    backdrop-filter: blur(2px);
   }
-  .contact-links a:hover{ border-color: var(--accent); color: var(--accent); }
-  .foot-note{
-    text-align: center;
-    margin-top: 28px;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px;
-    color: var(--ink-faint);
+  section::before{
+    content: ""; position: absolute; left: -34px; top: 26px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--cyan);
+    box-shadow: 0 0 12px rgba(0,196,204,.6);
   }
+  section h2{
+    font-family: var(--display); font-weight: 600; font-size: 21px; letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+  .muted{ color: var(--ink-soft); }
 
-  @media (max-width: 560px){
-    .wrap{ padding: 40px 18px 72px; }
-    .cv-block{ flex-direction: column; align-items: flex-start; }
-    .skills{ grid-template-columns: 1fr; }
-    .skills dt{ border-bottom: 0; padding-bottom: 6px; padding-top: 14px; }
-    .skills dd{ padding-top: 0; }
-    .rows li{ padding: 13px 16px; }
+  /* Profil */
+  .profile p{ margin: 0; color: var(--ink-soft); max-width: 70ch; }
+  .profile p + p{ margin-top: 10px; }
+  .profile strong{ color: var(--ink); font-weight: 600; }
+
+  /* Expérience : frise */
+  .timeline{ list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .timeline li{ display: grid; grid-template-columns: 150px 18px 1fr; gap: 0 14px; }
+  .timeline .when{ font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--cyan); text-align: right; padding-top: 2px; }
+  .timeline .node{ position: relative; }
+  .timeline .node::before{ content: ""; position: absolute; left: 3px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px rgba(0,196,204,.7); }
+  .timeline li:not(:last-child) .node::after{ content: ""; position: absolute; left: 8px; top: 20px; bottom: -22px; border-left: 2px dotted rgba(0,196,204,.5); }
+  .timeline h3{ margin: 0; font-size: 16.5px; font-weight: 600; line-height: 1.35; }
+  .timeline .org{ margin: 2px 0 0; color: var(--ink-soft); font-size: 14px; }
+  .timeline ul{ margin: 8px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 14.5px; }
+  .timeline ul li{ display: list-item; margin: 3px 0; }
+  .timeline ul li::marker{ color: var(--cyan); }
+
+  /* Compétences */
+  .skills{ display: grid; gap: 10px; margin: 0; }
+  .skill-row{ display: grid; grid-template-columns: 190px 1fr; align-items: center; border: 1px solid var(--line); border-radius: 10px; background: rgba(10,20,34,.45); }
+  .skill-row dt{ margin: 0; padding: 11px 16px; font-weight: 600; font-size: 14.5px; color: var(--cyan); border-right: 1px solid var(--line); }
+  .skill-row dd{ margin: 0; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag{ font-family: var(--mono); font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--cyan-soft); color: var(--ink); border: 1px solid rgba(0,196,204,.25); }
+  .tag.muted{ color: var(--ink-soft); background: transparent; border-color: var(--line); }
+
+  /* Projets */
+  .sub{ font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 12px; display: flex; align-items: center; gap: 12px; }
+  .sub::after{ content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(0,196,204,.45), transparent); }
+  .sub + .grid{ margin-bottom: 22px; }
+  .grid{ display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .grid:last-child{ margin-bottom: 0; }
+  .card{ padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: rgba(10,20,34,.45); display: flex; flex-direction: column; gap: 6px; }
+  .card:hover{ border-color: rgba(0,196,204,.55); }
+  .card h3{ margin: 0; font-size: 15.5px; font-weight: 600; color: var(--cyan); line-height: 1.35; }
+  .card .year{ font-family: var(--mono); font-size: 12px; color: var(--ink-faint); font-weight: 400; margin-left: 6px; }
+  .card .ctx{ margin: 0; font-size: 13px; color: var(--ink-faint); }
+  .card .resume{ margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+  .card .tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .card details{ margin-top: 2px; font-size: 14px; color: var(--ink-soft); }
+  .card summary{ cursor: pointer; font-family: var(--mono); font-size: 12px; color: var(--cyan); list-style: none; }
+  .card summary::-webkit-details-marker{ display: none; }
+  .card summary::before{ content: "+ "; }
+  .card details[open] summary::before{ content: "− "; }
+  .card details ul{ margin: 8px 0 0; padding-left: 18px; }
+  .card details li{ margin: 3px 0; }
+
+  /* Certifications */
+  .certs{ display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .cert{ display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 14px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(10,20,34,.45); }
+  .cert svg{ width: 22px; height: 22px; margin-top: 1px; }
+  .cert .n{ font-weight: 600; font-size: 14.5px; line-height: 1.35; }
+  .cert .o{ font-size: 13px; color: var(--ink-soft); }
+  .cert .d{ font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+  .badge{ display: inline-block; margin-top: 4px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding: 2px 8px; border-radius: 6px; color: var(--amber); border: 1px solid rgba(242,178,75,.45); background: rgba(242,178,75,.08); }
+
+  /* Formation */
+  .edu .timeline li{ grid-template-columns: 110px 18px 1fr; }
+  .edu h3{ font-size: 15.5px; }
+
+  /* Langues */
+  .langs{ display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+  .lang{ display: grid; grid-template-columns: 170px 1fr 150px; gap: 16px; align-items: center; }
+  .lang .l{ font-weight: 600; }
+  .bar{ height: 8px; border-radius: 8px; background: var(--line-soft); overflow: hidden; }
+  .bar span{ display: block; height: 100%; border-radius: 8px; background: linear-gradient(90deg, #1b8fd6, var(--cyan)); }
+  .lang:last-child .bar span{ background: linear-gradient(90deg, #22a861, var(--green)); }
+  .lang .lv{ font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); text-align: right; }
+
+  /* CV */
+  .cv{ display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .cv-left{ display: flex; align-items: center; gap: 14px; }
+  .cv-left svg{ width: 38px; height: 38px; flex: none; }
+  .cv-left p{ margin: 0; }
+  .cv-left .meta{ font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); }
+  .btn{ display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14.5px; padding: 10px 16px; border-radius: 10px; background: var(--cyan); color: #04212a; }
+  .btn:hover{ text-decoration: none; filter: brightness(1.08); }
+
+  /* Contact */
+  .contact{ display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; }
+  .contact .shield{ width: 92px; height: 92px; }
+  .contact ul{ list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .contact li a{ display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font-size: 15px; overflow-wrap: anywhere; }
+  .contact li a:hover{ color: var(--cyan); text-decoration: none; }
+  .contact li svg{ width: 22px; height: 22px; flex: none; color: var(--cyan); }
+  .contact .lede{ margin: 0; font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--cyan); max-width: 18ch; text-wrap: balance; }
+
+  .foot{ text-align: center; margin-top: 26px; font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+
+  @media (max-width: 720px){
+    .wrap{ padding: 20px 16px 56px; }
+    .hero{ grid-template-columns: 1fr; padding: 26px 22px; }
+    .hero .shield{ display: none; }
+    main{ padding-left: 26px; }
+    main::before{ left: 6px; }
+    section{ padding: 18px 16px 20px; }
+    section::before{ left: -27px; width: 12px; height: 12px; }
+    .timeline li, .edu .timeline li{ grid-template-columns: 14px 1fr; }
+    .timeline .when{ grid-column: 2; grid-row: 1; text-align: left; }
+    .timeline .node{ grid-column: 1; grid-row: 1 / span 2; }
+    .timeline .content{ grid-column: 2; }
+    .skill-row{ grid-template-columns: 1fr; }
+    .skill-row dt{ border-right: 0; border-bottom: 1px solid var(--line); padding: 8px 14px; }
+    .grid{ grid-template-columns: 1fr; }
+    .lang{ grid-template-columns: 1fr auto; }
+    .lang .bar{ grid-column: 1 / -1; grid-row: 2; }
+    .contact{ grid-template-columns: 1fr; }
+    .contact .shield{ display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .pill .dot{ animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse{ 50%{ opacity: .45; } }
   }
 </style>
 </head>
 <body>
 
-{% comment %}
-  Le contenu vient de _data/portfolio.yml. Modifier ce fichier-là, pas celui-ci.
-{% endcomment %}
-{% assign p = site.data.portfolio %}
-{% assign id = p.identite %}
-{% assign linkedin_label = id.linkedin | remove: "https://" | remove: "http://" | remove: "www." %}
-{% assign github_label = id.github | remove: "https://" | remove: "http://" %}
-{% assign github_handle = id.github | split: "/" | last %}
-{% assign linkedin_handle = id.linkedin | split: "/in/" | last | remove: "/" %}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#00c4cc" stroke-opacity=".18" stroke-width="1.5"/>
+      <circle cx="60" cy="60" r="44" fill="none" stroke="#00c4cc" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 6"/>
+      <path d="M60 26 L86 36 V58 C86 76 74 88 60 94 C46 88 34 76 34 58 V36 Z" fill="rgba(0,196,204,.10)" stroke="#00c4cc" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M48 60 L57 69 L74 50" fill="none" stroke="#3ddc84" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#22a861"/><path d="M7 12.5 L10.5 16 L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="#f2b24b" stroke-width="2"/><path d="M12 6 V12 L16 14" fill="none" stroke="#f2b24b" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 40 40"><rect x="7" y="3" width="26" height="34" rx="4" fill="none" stroke="#00c4cc" stroke-width="2.4"/><path d="M13 13 H27 M13 19 H27 M13 25 H22" stroke="#00c4cc" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 6.5 L12 13 L21 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10 V17 M7.5 7 V7.2 M11.5 17 V10 M11.5 13 C11.5 11 12.8 10 14.3 10 C15.8 10 16.8 11 16.8 13 V17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.6 1a9 9 0 0 1 4.8 0c1.8-1.3 2.6-1 2.6-1 .5 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.6 0 3.7-2.3 4.6-4.4 4.8.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
 <div class="wrap">
 
-  <header class="head">
-    <h1>{{ id.nom | escape }}</h1>
-    <p class="role">{{ id.titre | escape }}</p>
-    <div class="meta-strip">
-      <span><span class="k">E-mail :</span><a href="mailto:{{ id.email }}" data-goatcounter-click="clic-email-entete" data-goatcounter-title="E-mail (en-tête)">{{ id.email | escape }}</a></span>
-      <span><span class="k">LinkedIn :</span><a href="{{ id.linkedin }}" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin-entete" data-goatcounter-title="LinkedIn (en-tête)">{{ linkedin_label | escape }}</a></span>
-      <span><span class="k">GitHub :</span><a href="{{ id.github }}" target="_blank" rel="noopener" data-goatcounter-click="clic-github-entete" data-goatcounter-title="GitHub (en-tête)">{{ github_label | escape }}</a></span>
-      {% if id.telephone != "" %}<span><span class="k">Téléphone :</span>{{ id.telephone | escape }}</span>{% endif %}
-      <span><span class="k">Adresse :</span>{{ id.adresse | escape }}</span>
+  <header class="hero">
+    <div>
+      <h1>{{ id.nom | escape }}</h1>
+      <p class="role">{{ id.titre | escape }}</p>
+      <p class="links">
+        <a href="mailto:{{ id.email }}" data-goatcounter-click="clic-email-entete" data-goatcounter-title="E-mail (en-tête)">{{ id.email | escape }}</a>
+        <a href="{{ id.linkedin }}" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin-entete" data-goatcounter-title="LinkedIn (en-tête)">{{ linkedin_label | escape }}</a>
+        <a href="{{ id.github }}" target="_blank" rel="noopener" data-goatcounter-click="clic-github-entete" data-goatcounter-title="GitHub (en-tête)">{{ github_label | escape }}</a>
+      </p>
+      <div class="pills">
+        <span class="pill">Analyste SOC</span>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>{{ id.adresse | escape }}</span>
+      </div>
     </div>
+    <svg class="shield" aria-hidden="true"><use href="#i-shield"/></svg>
   </header>
 
   <main>
 
     <section id="profil" class="profile" aria-labelledby="profil-h">
-      <div class="eyebrow"><h2 id="profil-h">Profil</h2><span class="rule"></span></div>
+      <h2 id="profil-h">Profil</h2>
       {% for para in p.profil %}{{ para | markdownify }}{% endfor %}
     </section>
 
     <section id="experience" aria-labelledby="exp-h">
-      <div class="eyebrow"><h2 id="exp-h">Expérience professionnelle</h2><span class="rule"></span></div>
-      {% for x in p.experiences %}
-      <div class="entry">
-        <div class="entry-head">
-          <h3 class="entry-title">{{ x.poste | escape }}</h3>
-          <span class="entry-meta">{{ x.periode | escape }}</span>
-        </div>
-        <p class="entry-org">{{ x.organisation | escape }}</p>
-        {% if x.points.size > 0 %}<ul>{% for pt in x.points %}<li>{{ pt | escape }}</li>{% endfor %}</ul>{% endif %}
-      </div>
-      {% endfor %}
+      <h2 id="exp-h">Expérience</h2>
+      <ol class="timeline">
+        {% for x in p.experiences %}
+        <li>
+          <span class="when">{{ x.periode | escape }}</span>
+          <span class="node" aria-hidden="true"></span>
+          <div class="content">
+            <h3>{{ x.poste | escape }}</h3>
+            <p class="org">{{ x.organisation | escape }}</p>
+            {% if x.points.size > 0 %}<ul>{% for pt in x.points %}<li>{{ pt | escape }}</li>{% endfor %}</ul>{% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
     </section>
 
     <section id="competences" aria-labelledby="comp-h">
-      <div class="eyebrow"><h2 id="comp-h">Compétences</h2><span class="rule"></span></div>
+      <h2 id="comp-h">Compétences</h2>
       <dl class="skills">
         {% for c in p.competences %}
-        <dt>{{ c.domaine | escape }}</dt>
-        <dd><div class="chips">{% for e in c.elements %}<span class="chip{% if e contains "notions" %} muted{% endif %}">{{ e | escape }}</span>{% endfor %}</div></dd>
+        <div class="skill-row">
+          <dt>{{ c.domaine | escape }}</dt>
+          <dd>{% for e in c.elements %}<span class="tag{% if e contains "notions" %} muted{% endif %}">{{ e | escape }}</span>{% endfor %}</dd>
+        </div>
         {% endfor %}
       </dl>
     </section>
 
     <section id="projects" aria-labelledby="proj-h">
-      <div class="eyebrow"><h2 id="proj-h">Projets</h2><span class="rule"></span></div>
+      <h2 id="proj-h">Projets</h2>
       {% assign groupes = "projets_personnels|Projets personnels,projets_academiques|Projets académiques" | split: "," %}
       {% for g in groupes %}
         {% assign cle = g | split: "|" | first %}
         {% assign libelle = g | split: "|" | last %}
         {% assign liste = p[cle] %}
         {% if liste.size > 0 %}
-        <p class="sub-eyebrow">{{ libelle }}</p>
-        {% for x in liste %}
-        <div class="entry">
-          <div class="entry-head">
-            <h3 class="entry-title">{{ x.titre | escape }}</h3>
-            <span class="entry-meta">{{ x.periode | escape }}</span>
-          </div>
-          <p class="entry-org">{{ x.contexte | escape }}</p>
-          {% if x.points.size > 0 %}<ul>{% for pt in x.points %}<li>{{ pt | escape }}</li>{% endfor %}</ul>{% endif %}
-          {% if x.tags.size > 0 %}<div class="chips">{% for t in x.tags %}<span class="chip">{{ t | escape }}</span>{% endfor %}</div>{% endif %}
+        <p class="sub">{{ libelle }}</p>
+        <div class="grid">
+          {% for x in liste %}
+          <article class="card">
+            <h3>{{ x.titre | escape }}<span class="year">{{ x.periode | escape }}</span></h3>
+            <p class="ctx">{{ x.contexte | escape }}</p>
+            {% if x.resume %}<p class="resume">{{ x.resume | escape }}</p>{% endif %}
+            {% if x.points.size > 0 %}
+            <details>
+              <summary>Détails</summary>
+              <ul>{% for pt in x.points %}<li>{{ pt | escape }}</li>{% endfor %}</ul>
+            </details>
+            {% endif %}
+            {% if x.tags.size > 0 %}<div class="tags">{% for t in x.tags %}<span class="tag">{{ t | escape }}</span>{% endfor %}</div>{% endif %}
+          </article>
+          {% endfor %}
         </div>
-        {% endfor %}
         {% endif %}
       {% endfor %}
     </section>
 
     <section id="certifications" aria-labelledby="cert-h">
-      <div class="eyebrow"><h2 id="cert-h">Certifications et formations</h2><span class="rule"></span></div>
-      <ul class="rows">
+      <h2 id="cert-h">Certifications</h2>
+      <ul class="certs">
         {% for c in p.certifications %}
-        <li>
-          <span class="name">{{ c.nom | escape }}<span class="by">{{ c.organisme | escape }}</span></span>
-          <span class="when">{% if c.statut != "" %}<span class="chip status-pending">{{ c.statut | escape }}</span>{% else %}{{ c.date | escape }}{% endif %}</span>
+        <li class="cert">
+          {% if c.statut != "" %}<svg aria-hidden="true"><use href="#i-clock"/></svg>{% else %}<svg aria-hidden="true"><use href="#i-check"/></svg>{% endif %}
+          <div>
+            <div class="n">{{ c.nom | escape }}</div>
+            <div class="o">{{ c.organisme | escape }}</div>
+            {% if c.statut != "" %}<span class="badge">{{ c.statut | escape }}</span>{% elsif c.date != "" %}<div class="d">{{ c.date | escape }}</div>{% endif %}
+          </div>
         </li>
         {% endfor %}
       </ul>
     </section>
 
-    <section id="formation" aria-labelledby="formation-h">
-      <div class="eyebrow"><h2 id="formation-h">Formation</h2><span class="rule"></span></div>
-      <ul class="rows">
+    <section id="formation" class="edu" aria-labelledby="formation-h">
+      <h2 id="formation-h">Formation</h2>
+      <ol class="timeline">
         {% for f in p.formations %}
         <li>
-          <span class="name">{{ f.diplome | escape }}<span class="by">{{ f.etablissement | escape }}</span></span>
           <span class="when">{{ f.periode | escape }}</span>
+          <span class="node" aria-hidden="true"></span>
+          <div class="content">
+            <h3>{{ f.diplome | escape }}</h3>
+            <p class="org">{{ f.etablissement | escape }}</p>
+          </div>
         </li>
         {% endfor %}
-      </ul>
+      </ol>
     </section>
 
     <section id="langues" aria-labelledby="lang-h">
-      <div class="eyebrow"><h2 id="lang-h">Langues</h2><span class="rule"></span></div>
-      <ul class="rows">
-        {% for l in p.langues %}<li><span class="name">{{ l.langue | escape }}</span><span class="when">{{ l.niveau | escape }}</span></li>{% endfor %}
+      <h2 id="lang-h">Langues</h2>
+      <ul class="langs">
+        {% for l in p.langues %}
+        <li class="lang">
+          <span class="l">{{ l.langue | escape }}</span>
+          <span class="bar" aria-hidden="true"><span style="width: {{ l.pourcentage | default: 50 }}%"></span></span>
+          <span class="lv">{{ l.niveau | escape }}</span>
+        </li>
+        {% endfor %}
       </ul>
     </section>
 
     <section id="cv" aria-labelledby="cv-h">
-      <div class="eyebrow"><h2 id="cv-h">Curriculum vitae</h2><span class="rule"></span></div>
-      <div class="cv-block">
-        <div>
-          <p class="cv-title">CV — {{ id.nom | escape }}</p>
-          <p class="cv-meta">PDF · {{ p.cv.pages | escape }} · {% if p.cv.fichier != "" %}à télécharger{% else %}envoyé sur demande{% endif %}</p>
+      <h2 id="cv-h">CV</h2>
+      <div class="cv">
+        <div class="cv-left">
+          <svg aria-hidden="true"><use href="#i-doc"/></svg>
+          <div>
+            <p>{% if p.cv.fichier != "" %}CV à télécharger{% else %}CV disponible sur demande{% endif %}</p>
+            <p class="meta">PDF · {{ p.cv.pages | escape }}</p>
+          </div>
         </div>
         {% if p.cv.fichier != "" %}
-        <a class="cv-action" href="{{ p.cv.fichier | relative_url }}" download data-goatcounter-click="clic-telechargement-cv" data-goatcounter-title="Téléchargement du CV">Télécharger le CV</a>
+        <a class="btn" href="{{ p.cv.fichier | relative_url }}" download data-goatcounter-click="clic-telechargement-cv" data-goatcounter-title="Téléchargement du CV">Télécharger le CV</a>
         {% else %}
-        <a class="cv-action" href="mailto:{{ id.email }}?subject=Demande%20de%20CV" data-goatcounter-click="clic-demande-cv" data-goatcounter-title="Demande de CV">Demander par e-mail</a>
+        <a class="btn" href="mailto:{{ id.email }}?subject=Demande%20de%20CV" data-goatcounter-click="clic-demande-cv" data-goatcounter-title="Demande de CV">Demander par e-mail</a>
         {% endif %}
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <div class="contact">
+        <svg class="shield" aria-hidden="true"><use href="#i-shield"/></svg>
+        <ul>
+          <li><a href="mailto:{{ id.email }}" data-goatcounter-click="clic-email-contact" data-goatcounter-title="E-mail (contact)"><svg aria-hidden="true"><use href="#i-mail"/></svg>{{ id.email | escape }}</a></li>
+          <li><a href="{{ id.linkedin }}" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin-contact" data-goatcounter-title="LinkedIn (contact)"><svg aria-hidden="true"><use href="#i-in"/></svg>{{ linkedin_label | escape }}</a></li>
+          <li><a href="{{ id.github }}" target="_blank" rel="noopener" data-goatcounter-click="clic-github-contact" data-goatcounter-title="GitHub (contact)"><svg aria-hidden="true"><use href="#i-gh"/></svg>{{ github_label | escape }}</a></li>
+        </ul>
+        <p class="lede">{{ p.contact.phrase | escape }}</p>
       </div>
     </section>
 
   </main>
 
-  <footer class="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h" class="sr-only">Contact</h2>
-    <p class="lede">{{ p.contact.phrase | escape }}</p>
-    <div class="contact-links">
-      <a href="mailto:{{ id.email }}" data-goatcounter-click="clic-email-contact" data-goatcounter-title="E-mail (contact)">✉ {{ id.email | escape }}</a>
-      <a href="{{ id.linkedin }}" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin-contact" data-goatcounter-title="LinkedIn (contact)">in/{{ linkedin_handle | escape }}</a>
-      <a href="{{ id.github }}" target="_blank" rel="noopener" data-goatcounter-click="clic-github-contact" data-goatcounter-title="GitHub (contact)">@{{ github_handle | escape }}</a>
-    </div>
-  </footer>
-
-  <p class="foot-note">{{ id.nom | escape }} — dernière mise à jour {{ site.time | date: "%Y-%m-%d" }}</p>
+  <p class="foot">{{ id.nom | escape }} · {% if id.telephone != "" %}{{ id.telephone | escape }} · {% endif %}mise à jour {{ site.time | date: "%d/%m/%Y" }}</p>
 
 </div>
 
