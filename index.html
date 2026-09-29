@@ -371,9 +371,9 @@
     <h1>Ali Sayo Gambo</h1>
     <p class="role">Ingénieur en sécurité des systèmes informatiques · Analyste SOC</p>
     <div class="meta-strip">
-      <span><span class="k">E-mail :</span><a href="mailto:alisayo530@gmail.com">alisayo530@gmail.com</a></span>
-      <span><span class="k">LinkedIn :</span><a href="https://www.linkedin.com/in/ali-sayo" target="_blank" rel="noopener">linkedin.com/in/ali-sayo</a></span>
-      <span><span class="k">GitHub :</span><a href="https://github.com/aliisayo" target="_blank" rel="noopener">github.com/aliisayo</a></span>
+      <span><span class="k">E-mail :</span><a href="mailto:alisayo530@gmail.com" data-goatcounter-click="clic-email-entete" data-goatcounter-title="E-mail (en-tête)">alisayo530@gmail.com</a></span>
+      <span><span class="k">LinkedIn :</span><a href="https://www.linkedin.com/in/ali-sayo" data-goatcounter-click="clic-linkedin-entete" data-goatcounter-title="LinkedIn (en-tête)" target="_blank" rel="noopener">linkedin.com/in/ali-sayo</a></span>
+      <span><span class="k">GitHub :</span><a href="https://github.com/aliisayo" data-goatcounter-click="clic-github-entete" data-goatcounter-title="GitHub (en-tête)" target="_blank" rel="noopener">github.com/aliisayo</a></span>
       <span><span class="k">Téléphone :</span>+227 78 41 60 13</span>
       <span><span class="k">Adresse :</span>Niamey, Niger</span>
     </div>
@@ -597,7 +597,7 @@
           <p class="cv-title">CV — Ali Sayo Gambo</p>
           <p class="cv-meta">PDF · 2 pages · envoyé sur demande</p>
         </div>
-        <a class="cv-action" href="mailto:alisayo530@gmail.com?subject=Demande%20de%20CV">Demander par e-mail</a>
+        <a class="cv-action" href="mailto:alisayo530@gmail.com?subject=Demande%20de%20CV" data-goatcounter-click="clic-demande-cv" data-goatcounter-title="Demande de CV">Demander par e-mail</a>
       </div>
     </section>
 
@@ -607,9 +607,9 @@
     <h2 id="contact-h" class="sr-only">Contact</h2>
     <p class="lede">Ouvert aux opportunités en sécurité opérationnelle.</p>
     <div class="contact-links">
-      <a href="mailto:alisayo530@gmail.com">✉ alisayo530@gmail.com</a>
-      <a href="https://www.linkedin.com/in/ali-sayo" target="_blank" rel="noopener">in/ali-sayo</a>
-      <a href="https://github.com/aliisayo" target="_blank" rel="noopener">@aliisayo</a>
+      <a href="mailto:alisayo530@gmail.com" data-goatcounter-click="clic-email-contact" data-goatcounter-title="E-mail (contact)">✉ alisayo530@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ali-sayo" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin-contact" data-goatcounter-title="LinkedIn (contact)">in/ali-sayo</a>
+      <a href="https://github.com/aliisayo" target="_blank" rel="noopener" data-goatcounter-click="clic-github-contact" data-goatcounter-title="GitHub (contact)">@aliisayo</a>
     </div>
   </footer>
 
@@ -617,5 +617,39 @@
 
 </div>
 
+
+<!-- Statistiques de visite : GoatCounter (sans cookies). Tableau de bord : https://aliisayo.goatcounter.com -->
+<script data-goatcounter="https://aliisayo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+  // Enregistre une fois par visite chaque section réellement affichée à l'écran.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var seen = {}, queue = [];
+    function send(id, title) {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: 'section-' + id, title: 'Section : ' + title, event: true });
+      } else {
+        queue.push([id, title]);
+      }
+    }
+    var flush = setInterval(function () {
+      if (window.goatcounter && window.goatcounter.count) {
+        clearInterval(flush);
+        queue.splice(0).forEach(function (q) { send(q[0], q[1]); });
+      }
+    }, 500);
+    setTimeout(function () { clearInterval(flush); }, 15000);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var id = e.target.id;
+        if (!e.isIntersecting || seen[id]) return;
+        seen[id] = true;
+        var h = e.target.querySelector('h2');
+        send(id, h ? h.textContent.trim() : id);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -40% 0px' }); // compte dès que le haut de la section atteint 60 % de l'écran, même pour les longues sections sur mobile
+    document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+  })();
+</script>
 </body>
 </html>
