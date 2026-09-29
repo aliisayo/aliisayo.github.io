@@ -398,16 +398,6 @@
       {% for para in p.profil %}{{ para | markdownify }}{% endfor %}
     </section>
 
-    <section id="competences" aria-labelledby="comp-h">
-      <div class="eyebrow"><h2 id="comp-h">Compétences</h2><span class="rule"></span></div>
-      <dl class="skills">
-        {% for c in p.competences %}
-        <dt>{{ c.domaine | escape }}</dt>
-        <dd><div class="chips">{% for e in c.elements %}<span class="chip{% if e contains "notions" %} muted{% endif %}">{{ e | escape }}</span>{% endfor %}</div></dd>
-        {% endfor %}
-      </dl>
-    </section>
-
     <section id="experience" aria-labelledby="exp-h">
       <div class="eyebrow"><h2 id="exp-h">Expérience professionnelle</h2><span class="rule"></span></div>
       {% for x in p.experiences %}
@@ -420,6 +410,16 @@
         {% if x.points.size > 0 %}<ul>{% for pt in x.points %}<li>{{ pt | escape }}</li>{% endfor %}</ul>{% endif %}
       </div>
       {% endfor %}
+    </section>
+
+    <section id="competences" aria-labelledby="comp-h">
+      <div class="eyebrow"><h2 id="comp-h">Compétences</h2><span class="rule"></span></div>
+      <dl class="skills">
+        {% for c in p.competences %}
+        <dt>{{ c.domaine | escape }}</dt>
+        <dd><div class="chips">{% for e in c.elements %}<span class="chip{% if e contains "notions" %} muted{% endif %}">{{ e | escape }}</span>{% endfor %}</div></dd>
+        {% endfor %}
+      </dl>
     </section>
 
     <section id="projects" aria-labelledby="proj-h">
