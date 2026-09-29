@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ali Sayo Gambo, ingénieur en sécurité des systèmes informatiques et analyste SOC à Niamey (Niger) : compétences, expérience, projets et certifications.">
+<meta property="og:title" content="Ali Sayo Gambo — Analyste SOC">
+<meta property="og:description" content="Ingénieur en sécurité des systèmes informatiques · Analyste SOC · Niamey, Niger">
+<meta property="og:type" content="website">
+<title>Ali Sayo Gambo — Analyste SOC</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  img{max-width:100%}
+  :root{
+    color-scheme: dark;
+    --bg: #0B1113;
+    --surface: #121A1D;
+    --surface-2: #182124;
+    --ink: #E9EEED;
+    --ink-soft: #9AABAF;
+    --ink-faint: #647074;
+    --line: #223033;
+    --accent: #45C9D2;
+    --accent-soft: #16292B;
+    --pending: #E3AE5E;
+    --pending-soft: #241D12;
+    --pending-line: #4A3A1F;
+    --focus: #45C9D2;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 26px -14px rgba(0,0,0,0.55);
+  }
+
+  /* Page volontairement sombre uniquement — pas d'adaptation au thème du système. */
+
+  *{ box-sizing: border-box; }
+  html{ text-size-adjust: 100%; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  .sr-only{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  /* ---------- En-tête ---------- */
+  .head{
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+  .head h1{
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  .head .role{
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(19px, 3vw, 23px);
+    line-height: 1.35;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+    text-wrap: balance;
+  }
+  .meta-strip{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    overflow-wrap: anywhere;
+  }
+  .meta-strip .k{ color: var(--ink-faint); margin-right: 6px; }
+  .meta-strip a{ color: var(--ink); }
+  .meta-strip a:hover{ color: var(--accent); }
+
+  /* ---------- Sections ---------- */
+  section{ margin-bottom: 56px; }
+  section:last-of-type{ margin-bottom: 0; }
+  .eyebrow{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .eyebrow h2{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .eyebrow .rule{ flex: 1; height: 1px; background: var(--line); }
+  .sub-eyebrow{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 28px 0 14px;
+  }
+  .sub-eyebrow:first-child{ margin-top: 0; }
+
+  /* ---------- Profil ---------- */
+  .profile p{
+    margin: 0;
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    max-width: 65ch;
+  }
+  .profile p + p{ margin-top: 12px; }
+  .profile strong{ color: var(--ink); font-weight: 500; }
+
+  /* ---------- Compétences ---------- */
+  .skills{
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+  .skills dt, .skills dd{
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .skills dt{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-right: 16px;
+    padding-top: 17px;
+  }
+  .chips{ display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip{
+    display: inline-flex;
+    align-items: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    padding: 3px 9px;
+    border-radius: 5px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .chip.muted{ color: var(--ink-soft); }
+  .chip.status-pending{
+    color: var(--pending);
+    background: var(--pending-soft);
+    border-color: var(--pending-line);
+    font-size: 11px;
+  }
+  .chip.status-new{
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    font-size: 11px;
+  }
+
+  /* ---------- Entrées ---------- */
+  .entry{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+  .entry:last-child{ margin-bottom: 0; }
+  .entry-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 12px;
+    flex-wrap: wrap;
+  }
+  .entry-title{
+    font-weight: 600;
+    font-size: 16.5px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .entry-meta{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .entry-org{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 3px 0 0;
+  }
+  .entry ul{
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .entry li{
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    padding-left: 17px;
+    position: relative;
+  }
+  .entry li::before{
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .entry .chips{ margin-top: 14px; }
+  .entry .chips .chip{ font-size: 11px; color: var(--ink-soft); background: var(--surface-2); }
+
+  /* ---------- Listes compactes (certifications, langues) ---------- */
+  .rows{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .rows li{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 16px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .rows li:last-child{ border-bottom: 0; }
+  .rows .name{ font-size: 15px; font-weight: 500; }
+  .rows .by{ display: block; font-size: 13.5px; color: var(--ink-soft); font-weight: 400; }
+  .rows .when{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ---------- CV ---------- */
+  .cv-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    flex-wrap: wrap;
+  }
+  .cv-title{
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .cv-meta{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+  .cv-action{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    padding: 9px 14px;
+    border-radius: 7px;
+    white-space: nowrap;
+  }
+  .cv-action:hover{ border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  /* ---------- Contact ---------- */
+  .contact{
+    margin-top: 64px;
+    padding: 32px 28px;
+    background: var(--surface-2);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .contact p.lede{
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .contact-links{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .contact-links a{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    border-radius: 7px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .contact-links a:hover{ border-color: var(--accent); color: var(--accent); }
+  .foot-note{
+    text-align: center;
+    margin-top: 28px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 560px){
+    .wrap{ padding: 40px 18px 72px; }
+    .cv-block{ flex-direction: column; align-items: flex-start; }
+    .skills{ grid-template-columns: 1fr; }
+    .skills dt{ border-bottom: 0; padding-bottom: 6px; padding-top: 14px; }
+    .skills dd{ padding-top: 0; }
+    .rows li{ padding: 13px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="head">
+    <h1>Ali Sayo Gambo</h1>
+    <p class="role">Ingénieur en sécurité des systèmes informatiques · Analyste SOC</p>
+    <div class="meta-strip">
+      <span><span class="k">E-mail :</span><a href="mailto:alisayo530@gmail.com">alisayo530@gmail.com</a></span>
+      <span><span class="k">LinkedIn :</span><a href="https://www.linkedin.com/in/ali-sayo" target="_blank" rel="noopener">linkedin.com/in/ali-sayo</a></span>
+      <span><span class="k">GitHub :</span><a href="https://github.com/aliisayo" target="_blank" rel="noopener">github.com/aliisayo</a></span>
+      <span><span class="k">Téléphone :</span>+227 78 41 60 13</span>
+      <span><span class="k">Adresse :</span>Niamey, Niger</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="profil" class="profile" aria-labelledby="profil-h">
+      <div class="eyebrow"><h2 id="profil-h">Profil</h2><span class="rule"></span></div>
+      <p>Analyste SOC dans un <strong>SOC multi-tenants (MSSP)</strong> à Niamey, titulaire d'un Master 2 en Réseaux et Systèmes Distribués. Je surveille les journaux de sécurité de plusieurs entreprises clientes, je trie et j'escalade les alertes, et j'interviens aussi en audit IT et en sensibilisation à la cybersécurité.</p>
+      <p>En dehors du travail, je monte mes propres laboratoires (SIEM/SOC, forensique, Red Team / Blue Team selon MITRE ATT&amp;CK) et je documente chaque projet de bout en bout.</p>
+    </section>
+
+    <section id="competences" aria-labelledby="comp-h">
+      <div class="eyebrow"><h2 id="comp-h">Compétences</h2><span class="rule"></span></div>
+      <dl class="skills">
+        <dt>SIEM / SOC</dt>
+        <dd><div class="chips">
+          <span class="chip">Wazuh</span><span class="chip">SocTalk</span><span class="chip">TheHive</span><span class="chip">Cortex</span><span class="chip">MISP</span><span class="chip">Shuffle SOAR</span><span class="chip">Suricata</span>
+        </div></dd>
+        <dt>Offensif &amp; défensif</dt>
+        <dd><div class="chips">
+          <span class="chip">MITRE ATT&amp;CK</span><span class="chip">Tests d'intrusion</span><span class="chip">Audit IT</span><span class="chip">ISO 27001</span><span class="chip">OWASP</span><span class="chip">Analyse de phishing</span>
+        </div></dd>
+        <dt>Forensique</dt>
+        <dd><div class="chips">
+          <span class="chip">Autopsy</span><span class="chip">Volatility</span><span class="chip">Chaîne d'attaque</span><span class="chip">IoC</span>
+        </div></dd>
+        <dt>Réseaux &amp; systèmes</dt>
+        <dd><div class="chips">
+          <span class="chip">TCP/IP</span><span class="chip">BGP</span><span class="chip">OSPF</span><span class="chip">Linux</span><span class="chip">Windows Server</span>
+        </div></dd>
+        <dt>Cloud</dt>
+        <dd><div class="chips">
+          <span class="chip muted">AWS (notions)</span><span class="chip muted">Azure (notions)</span>
+        </div></dd>
+        <dt>IA appliquée</dt>
+        <dd><div class="chips">
+          <span class="chip">CNN</span><span class="chip">Pipelines temps réel</span><span class="chip">LLM local (Ollama)</span><span class="chip">Claude Code</span>
+        </div></dd>
+      </dl>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-h">
+      <div class="eyebrow"><h2 id="exp-h">Expérience professionnelle</h2><span class="rule"></span></div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Analyste SOC N1, auditeur IT et formateur cybersécurité</h3>
+          <span class="entry-meta">Juin 2026 – aujourd'hui</span>
+        </div>
+        <p class="entry-org">iTechCenter Niger — Niamey, Niger</p>
+        <ul>
+          <li>Surveillance, détection et escalade des incidents jusqu'à la réponse, au sein d'un SOC multi-tenants (MSSP) gérant les journaux de sécurité de plusieurs entreprises clientes.</li>
+          <li>Utilisation quotidienne de la stack SOC : Wazuh et SocTalk pour la détection, TheHive et Cortex pour la gestion des cas et l'analyse, MISP pour le renseignement sur les menaces.</li>
+          <li>Missions d'audit IT : évaluation de configurations, identification de vulnérabilités, recommandations de remédiation.</li>
+          <li>Animation de sessions de formation et de sensibilisation aux risques cyber auprès de publics variés.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Opérateur d'enrôlement biométrique</h3>
+          <span class="entry-meta">14 – 29 nov. 2022</span>
+        </div>
+        <p class="entry-org">Commission Électorale Nationale Indépendante (CENI) — Ambassade du Niger, Alger, Algérie</p>
+        <ul>
+          <li>Déploiement et configuration de systèmes biométriques en environnement diplomatique, en coordination directe avec les agents et responsables de l'ambassade.</li>
+          <li>Collecte, traitement et stockage sécurisé de données sensibles, dans le respect strict des procédures de conformité.</li>
+          <li>Diagnostic et résolution d'incidents techniques sur site, sous contrainte de délais.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="proj-h">
+      <div class="eyebrow"><h2 id="proj-h">Projets</h2><span class="rule"></span></div>
+
+      <p class="sub-eyebrow">Projets personnels</p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Assistant d'analyse de phishing pour SOC</h3>
+          <span class="entry-meta">Septembre 2026</span>
+        </div>
+        <p class="entry-org">Outil personnel — skill pour Claude Code</p>
+        <ul>
+          <li>Analyse statique d'un e-mail suspect (.eml, texte collé ou boîte Gmail) : usurpation d'expéditeur, SPF / DKIM / DMARC et alignement, chemin Received, liens (texte affiché contre destination réelle), pièces jointes et hash SHA-256.</li>
+          <li>Rapport de triage en français : verdict et niveau de confiance, IoC défangés, techniques MITRE ATT&amp;CK (T1566), actions recommandées pour l'utilisateur et le SOC.</li>
+          <li>Parseur MIME écrit en Node.js sans dépendance ni accès réseau, qui extrait aussi les URLs cachées dans les pièces jointes HTML (faux formulaires de connexion).</li>
+        </ul>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">MIME / RFC 5322</span><span class="chip">SPF · DKIM · DMARC</span><span class="chip">MITRE T1566</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Déploiement d'un SOC (Security Operations Center)</h3>
+          <span class="entry-meta">Janvier 2025</span>
+        </div>
+        <p class="entry-org">Laboratoire personnel</p>
+        <ul>
+          <li>Infrastructure SIEM/SOC intégrant SocTalk, Wazuh et Ollama (LLM local) pour la collecte, la corrélation et l'analyse de journaux d'événements en temps réel.</li>
+          <li>Configuration des règles IDS/IPS et automatisation des procédures de réponse aux incidents (confinement, éradication, reprise d'activité).</li>
+        </ul>
+        <div class="chips"><span class="chip">Wazuh</span><span class="chip">SocTalk</span><span class="chip">Ollama</span><span class="chip">IDS/IPS</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Investigation forensique numérique</h3>
+          <span class="entry-meta">Septembre 2024</span>
+        </div>
+        <p class="entry-org">Laboratoire personnel</p>
+        <ul>
+          <li>Analyse d'images disques de systèmes compromis avec Autopsy et Volatility ; reconstitution complète de la chaîne d'attaque.</li>
+          <li>Identification des indicateurs de compromission (IoC) et rédaction d'un rapport forensique structuré, avec recommandations de remédiation.</li>
+        </ul>
+        <div class="chips"><span class="chip">Autopsy</span><span class="chip">Volatility</span><span class="chip">IoC</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Simulation Red Team / Blue Team</h3>
+          <span class="entry-meta">2023</span>
+        </div>
+        <p class="entry-org">Laboratoire personnel</p>
+        <ul>
+          <li>Scénarios d'attaque selon le référentiel MITRE ATT&amp;CK ; réduction de la surface d'attaque de 70 % sur l'environnement de test.</li>
+          <li>Rapport de recommandations correctives structuré selon OWASP et ISO 27001.</li>
+        </ul>
+        <div class="chips"><span class="chip">MITRE ATT&amp;CK</span><span class="chip">OWASP</span><span class="chip">ISO 27001</span></div>
+      </div>
+
+      <p class="sub-eyebrow">Projets académiques</p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">IoT et intelligence artificielle pour l'agriculture de précision</h3>
+          <span class="entry-meta">2022 – 2023</span>
+        </div>
+        <p class="entry-org">Mémoire de Master 2 — Université Oran 1, Laboratoire LAPECI (dir. Pr. Benyamina)</p>
+        <ul>
+          <li>Modèle CNN atteignant 91 % de précision pour la détection précoce des maladies des plantes, à partir d'images issues de capteurs IoT.</li>
+          <li>Pipeline de traitement temps réel réduisant de 60 % le délai de détection des anomalies.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Supervision de la consommation énergétique d'une infrastructure IT</h3>
+          <span class="entry-meta">2020</span>
+        </div>
+        <p class="entry-org">Projet de Licence — Université Oran 1, Laboratoire LIO</p>
+        <ul>
+          <li>Tableaux de bord de supervision temps réel (CPU, RAM, stockage).</li>
+          <li>Outils de reporting pour décideurs non techniques.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="certifications" aria-labelledby="cert-h">
+      <div class="eyebrow"><h2 id="cert-h">Certifications et formations</h2><span class="rule"></span></div>
+      <ul class="rows">
+        <li>
+          <span class="name">SOC Level 1<span class="by">TryHackMe</span></span>
+          <span class="when"><span class="chip status-pending">En cours</span></span>
+        </li>
+        <li>
+          <span class="name">Réponse aux incidents et aux menaces<span class="by">ISC2</span></span>
+          <span class="when"></span>
+        </li>
+        <li>
+          <span class="name">Introduction to Cybersecurity<span class="by">Cisco</span></span>
+          <span class="when"></span>
+        </li>
+        <li>
+          <span class="name">Prévention du phishing<span class="by">Hax et Fix</span></span>
+          <span class="when"></span>
+        </li>
+        <li>
+          <span class="name">Préparation CCNA v1.1 (200-301) : comprendre les cyberattaques<span class="by">LinkedIn Learning</span></span>
+          <span class="when">Sept. 2024</span>
+        </li>
+        <li>
+          <span class="name">Fibre optique, réseaux FTTH et caméras IP<span class="by">Institut CFBI, Oran</span></span>
+          <span class="when">2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="formation" aria-labelledby="formation-h">
+      <div class="eyebrow"><h2 id="formation-h">Formation</h2><span class="rule"></span></div>
+      <ul class="rows">
+        <li>
+          <span class="name">Master 2 — Réseaux et Systèmes Distribués<span class="by">Université Oran 1 Ahmed Ben Bella, Algérie</span></span>
+          <span class="when">2021 – 2023</span>
+        </li>
+        <li>
+          <span class="name">Licence — Systèmes Informatiques<span class="by">Université Oran 1 Ahmed Ben Bella, Algérie</span></span>
+          <span class="when">2017 – 2020</span>
+        </li>
+        <li>
+          <span class="name">Baccalauréat scientifique — Série D<span class="by">CSP Le Tarat, Arlit, Niger</span></span>
+          <span class="when">2017</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="langues" aria-labelledby="lang-h">
+      <div class="eyebrow"><h2 id="lang-h">Langues</h2><span class="rule"></span></div>
+      <ul class="rows">
+        <li><span class="name">Français</span><span class="when">Courant · C1–C2</span></li>
+        <li><span class="name">Anglais</span><span class="when">Intermédiaire · B1</span></li>
+        <li><span class="name">Haoussa et Zarma</span><span class="when">Langues maternelles</span></li>
+      </ul>
+    </section>
+
+    <section id="cv" aria-labelledby="cv-h">
+      <div class="eyebrow"><h2 id="cv-h">Curriculum vitae</h2><span class="rule"></span></div>
+      <div class="cv-block">
+        <div>
+          <p class="cv-title">CV — Ali Sayo Gambo</p>
+          <p class="cv-meta">PDF · 2 pages · envoyé sur demande</p>
+        </div>
+        <a class="cv-action" href="mailto:alisayo530@gmail.com?subject=Demande%20de%20CV">Demander par e-mail</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" class="sr-only">Contact</h2>
+    <p class="lede">Ouvert aux opportunités en sécurité opérationnelle.</p>
+    <div class="contact-links">
+      <a href="mailto:alisayo530@gmail.com">✉ alisayo530@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ali-sayo" target="_blank" rel="noopener">in/ali-sayo</a>
+      <a href="https://github.com/aliisayo" target="_blank" rel="noopener">@aliisayo</a>
+    </div>
+  </footer>
+
+  <p class="foot-note">Ali Sayo Gambo — dernière mise à jour 2026-09-29</p>
+
+</div>
+
+</body>
+</html>
