@@ -1,6 +1,7 @@
 # =====================================================================
 #  CONTENU DU PORTFOLIO — c'est le seul fichier à modifier pour
-#  mettre à jour le site. Le design est dans index.html (ne pas toucher).
+#  mettre à jour le site (version française). Version anglaise :
+#  portfolio_en.yml. Le design est dans _layouts/portfolio.html.
 #
 #  Règles simples :
 #   - Garder les espaces au début des lignes (indentation) comme ils sont.

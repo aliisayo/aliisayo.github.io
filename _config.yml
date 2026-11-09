@@ -1,4 +1,5 @@
 # Configuration Jekyll pour GitHub Pages.
+url: "https://aliisayo.github.io"
 lang: fr
 exclude:
   - README.md

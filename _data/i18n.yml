@@ -1,0 +1,51 @@
+# =====================================================================
+#  DICTIONNAIRE FR / EN — textes fixes de l'interface (titres de
+#  sections, boutons…). Le contenu (profil, projets, certifications…)
+#  est dans portfolio.yml (français) et portfolio_en.yml (anglais).
+# =====================================================================
+
+fr:
+  role_court: "Analyste SOC"
+  profil: "Profil"
+  experience: "Expérience"
+  competences: "Compétences"
+  projets: "Projets"
+  projets_personnels: "Projets personnels"
+  projets_academiques: "Projets académiques"
+  details: "Détails"
+  certifications: "Certifications"
+  formation: "Formation"
+  langues: "Langues"
+  cv: "CV"
+  cv_telecharger_titre: "CV à télécharger"
+  cv_sur_demande: "CV disponible sur demande"
+  cv_telecharger: "Télécharger le CV"
+  cv_demander: "Demander par e-mail"
+  cv_sujet: "Demande de CV"
+  contact: "Contact"
+  mise_a_jour: "mise à jour"
+  format_date: "%d/%m/%Y"
+  changer_langue: "Langue du site"
+
+en:
+  role_court: "SOC Analyst"
+  profil: "Profile"
+  experience: "Experience"
+  competences: "Skills"
+  projets: "Projects"
+  projets_personnels: "Personal projects"
+  projets_academiques: "Academic projects"
+  details: "Details"
+  certifications: "Certifications"
+  formation: "Education"
+  langues: "Languages"
+  cv: "Resume"
+  cv_telecharger_titre: "Resume available for download"
+  cv_sur_demande: "Resume available on request"
+  cv_telecharger: "Download resume"
+  cv_demander: "Request by e-mail"
+  cv_sujet: "Resume request"
+  contact: "Contact"
+  mise_a_jour: "updated"
+  format_date: "%Y-%m-%d"
+  changer_langue: "Site language"

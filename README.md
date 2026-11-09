@@ -6,7 +6,13 @@ En ligne : https://aliisayo.github.io
 
 ## Mettre à jour le contenu
 
-Tout le contenu (profil, compétences, expérience, projets, certifications, formation, langues, CV) est dans **[`_data/portfolio.yml`](_data/portfolio.yml)**. C'est le seul fichier à modifier.
+Le site existe en deux langues : français (https://aliisayo.github.io) et anglais (https://aliisayo.github.io/en/), avec un bouton FR / EN en haut de page.
+
+- Contenu en français : **[`_data/portfolio.yml`](_data/portfolio.yml)**
+- Contenu en anglais : **[`_data/portfolio_en.yml`](_data/portfolio_en.yml)** (même structure)
+- Dictionnaire des textes fixes (titres de sections, boutons) : [`_data/i18n.yml`](_data/i18n.yml)
+
+Quand vous ajoutez un élément dans `portfolio.yml`, ajoutez sa traduction au même endroit dans `portfolio_en.yml`.
 
 1. Ouvrir `_data/portfolio.yml` sur GitHub et cliquer sur le crayon ✏️.
 2. Pour ajouter un élément, copier un bloc qui commence par `- `, le coller juste en dessous et changer le texte. Garder les espaces en début de ligne et les guillemets.
@@ -25,6 +31,8 @@ Si la publication échoue (croix rouge dans **Actions**), c'est presque toujours
 
 ## Organisation
 
-- `_data/portfolio.yml` : le contenu.
-- `index.html` : le design (généré par Jekyll, intégré à GitHub Pages).
+- `_data/portfolio.yml` / `_data/portfolio_en.yml` : le contenu (fr / en).
+- `_data/i18n.yml` : le dictionnaire de l'interface.
+- `_layouts/portfolio.html` : le design, commun aux deux langues.
+- `index.html` et `en/index.html` : les deux pages (ne contiennent que la langue).
 - Statistiques de visite : GoatCounter, https://aliisayo.goatcounter.com (sans cookies).
