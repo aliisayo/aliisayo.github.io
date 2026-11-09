@@ -26,17 +26,16 @@
 <meta name="theme-color" content="#0a1422">
 <title>{{ id.nom | escape }} — {{ t.role_court }}</title>
 <script>
-  // Première visite : un navigateur qui n'est pas en français est envoyé vers /en/.
-  // Ensuite, le choix fait avec le bouton FR / EN est retenu.
-  (function () {
+  // Page d'accueil française uniquement : un visiteur qui a choisi EN, ou dont le
+  // navigateur n'est pas en français, est envoyé vers /en/. Un lien direct vers /en/
+  // reste toujours en anglais.
+  {% if lang == "fr" %}(function () {
     var pref = null;
     try { pref = localStorage.getItem('lang'); } catch (e) {}
     var nav = (navigator.language || 'fr').toLowerCase();
     var want = pref || (nav.indexOf('fr') === 0 ? 'fr' : 'en');
-    if (want !== '{{ lang }}' && !/[?&]nolang/.test(location.search)) {
-      location.replace(want === 'en' ? '{{ url_en }}' : '{{ url_fr }}');
-    }
-  })();
+    if (want === 'en' && !/[?&]nolang/.test(location.search)) location.replace('{{ url_en }}');
+  })();{% endif %}
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
