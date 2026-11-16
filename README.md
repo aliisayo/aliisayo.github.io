@@ -34,5 +34,6 @@ Si la publication échoue (croix rouge dans **Actions**), c'est presque toujours
 - `_data/portfolio.yml` / `_data/portfolio_en.yml` : le contenu (fr / en).
 - `_data/i18n.yml` : le dictionnaire de l'interface.
 - `_layouts/portfolio.html` : le design, commun aux deux langues.
+- Thème clair / sombre : bouton soleil / lune en haut de page. Par défaut, le site suit le réglage de l'appareil du visiteur ; son choix est ensuite mémorisé. Les couleurs des deux thèmes sont en haut de `_layouts/portfolio.html` (`:root` pour le sombre, `:root[data-theme="light"]` pour le clair).
 - `index.html` et `en/index.html` : les deux pages (ne contiennent que la langue).
 - Statistiques de visite : GoatCounter, https://aliisayo.goatcounter.com (sans cookies).

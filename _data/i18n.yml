@@ -26,6 +26,8 @@ fr:
   mise_a_jour: "mise à jour"
   format_date: "%d/%m/%Y"
   changer_langue: "Langue du site"
+  theme_clair: "Passer au thème clair"
+  theme_sombre: "Passer au thème sombre"
 
 en:
   role_court: "SOC Analyst"
@@ -49,3 +51,5 @@ en:
   mise_a_jour: "updated"
   format_date: "%Y-%m-%d"
   changer_langue: "Site language"
+  theme_clair: "Switch to light theme"
+  theme_sombre: "Switch to dark theme"
