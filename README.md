@@ -36,3 +36,16 @@ Si la publication échoue (croix rouge dans **Actions**), c'est presque toujours
 - `_layouts/portfolio.html` : le design, commun aux deux langues.
 - `index.html` et `en/index.html` : les deux pages (ne contiennent que la langue).
 - Statistiques de visite : GoatCounter, https://aliisayo.goatcounter.com (sans cookies).
+- `assets/style.css` : la feuille de style ; `assets/lang.js` et `assets/stats.js` : les scripts.
+- `mentions-legales.md`, `confidentialite.md` (et `en/legal-notice.md`, `en/privacy.md`) : pages légales.
+- `assets/fonts/` : polices hébergées avec le site (aucune requête vers Google).
+- `assets/apercu.png` : image affichée quand le lien du site est partagé ; `favicon.svg` : icône d'onglet.
+- `robots.txt`, `sitemap.xml` (généré automatiquement), `404.html` (page d'erreur).
+
+## Sécurité
+
+`_includes/csp.html` contient la politique de sécurité du contenu (CSP) : le site n'accepte que ses
+propres fichiers et GoatCounter. Conséquence : **pas de script ni de style écrit directement dans
+une page**, et tout nouveau service externe (vidéo, police, script) doit y être ajouté, sinon le
+navigateur le bloque. GitHub Pages ne permet pas les en-têtes HTTP : `X-Frame-Options` et
+`X-Content-Type-Options` ne peuvent pas être définis.

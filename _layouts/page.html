@@ -1,0 +1,32 @@
+---
+# Pages simples (mentions légales, confidentialité, erreur 404) : même charte que le portfolio.
+---
+{% assign lang = page.lang | default: "fr" %}
+{% if lang == "en" %}{% assign home = "/en/" | relative_url %}{% assign back = "← Back to the portfolio" %}{% else %}{% assign home = "/" | relative_url %}{% assign back = "← Retour au portfolio" %}{% endif %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% include csp.html %}
+<meta name="description" content="{{ page.description | default: page.title | escape }}">
+<meta name="theme-color" content="#0a1422">
+{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+<link rel="icon" href="{{ "/favicon.svg" | relative_url }}" type="image/svg+xml">
+<title>{{ page.title | escape }} — {{ site.data.portfolio.identite.nom | escape }}</title>
+<link rel="stylesheet" href="{{ "/assets/fonts/fonts.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/style.css" | relative_url }}">
+</head>
+<body>
+<div class="wrap page">
+  <p class="back"><a href="{{ home }}">{{ back }}</a></p>
+  <main class="doc">
+    <section>
+      <h1>{{ page.title | escape }}</h1>
+      {{ content }}
+    </section>
+  </main>
+  {% include legal-links.html lang=lang %}
+</div>
+</body>
+</html>

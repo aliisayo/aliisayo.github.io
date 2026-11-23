@@ -1,0 +1,9 @@
+{%- comment -%}
+  Politique de sécurité du contenu. GitHub Pages ne permet pas d'envoyer d'en-têtes HTTP :
+  on la déclare donc dans la page. Elle n'autorise que les fichiers du site lui-même,
+  plus GoatCounter (statistiques). Les directives frame-ancestors et report-uri ne sont pas
+  prises en compte dans une balise <meta> : c'est une limite de GitHub Pages.
+  Les styles « inline » restent permis pour les barres de niveau de langue (attribut style).
+{%- endcomment -%}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://aliisayo.goatcounter.com; connect-src 'self' https://aliisayo.goatcounter.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
